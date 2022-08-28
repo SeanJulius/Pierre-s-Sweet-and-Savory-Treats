@@ -1,29 +1,29 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.Configuration;
-using System.IO;
+// using Microsoft.EntityFrameworkCore;
+// using Microsoft.EntityFrameworkCore.Design;
+// using Microsoft.Extensions.Configuration;
+// using System.IO;
 
-namespace PierresTreats.Models
-{
-  public class PierresTreatsContextFactory : IDesignDbContextFactory<PierresTreatsContext>
-  {
-
-
-    PierresTreatsContext IDesignDbContextFactory<PierresTreatsContext>.CreateDbContext(string[] args)
-    {
-
-      IConfigurationRoot configuration = new ConfigurationBuilder()
-        .SetBasePath(Directory.GetCurrentDirectory())
-        .AddJsonFile("appsettings.json")
-        .Build();
+// namespace PierresTreats.Models
+// {
+//   public class PierresTreatsContextFactory : IDesignDbContextFactory<PierresTreatsContext>
+//   {
 
 
-      var builder = new DbContextOptionsBuilder<PierresTreatsContext>();
+//     PierresTreatsContext IDesignDbContextFactory<PierresTreatsContext>.CreateDbContext(string[] args)
+//     {
 
-      builder.UseMySql(configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(configuration["ConnectionStrings:DefaultConnection"]));
+//       IConfigurationRoot configuration = new ConfigurationBuilder()
+//         .SetBasePath(Directory.GetCurrentDirectory())
+//         .AddJsonFile("appsettings.json")
+//         .Build();
 
-      return new PierresTreatsContext(builder.Options);
 
-    }
-  }
-}
+//       var builder = new DbContextOptionsBuilder<PierresTreatsContext>();
+
+//       builder.UseMySql(configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(configuration["ConnectionStrings:DefaultConnection"]));
+
+//       return new PierresTreatsContext(builder.Options);
+
+//     }
+//   }
+// }

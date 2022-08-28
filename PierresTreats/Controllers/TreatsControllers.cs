@@ -21,7 +21,7 @@ namespace PierresTreats.Controllers
 
     private readonly UserManager<ApplicationUser> _userManager;
 
-    public TreatsController(UserManager<ApplicationUser> userManager, PierresTreatsContext db)
+    public TreatsControllers(UserManager<ApplicationUser> userManager, PierresTreatsContext db)
 
     {
 
@@ -60,7 +60,7 @@ namespace PierresTreats.Controllers
 
       if (FlavorId != 0)
       {
-        
+
         _db.FlavorTreat.Add(new FlavorTreat() { FlavorId = FlavorId, TreatId = treat.TreatId });
       }
       _db.SaveChanges();
