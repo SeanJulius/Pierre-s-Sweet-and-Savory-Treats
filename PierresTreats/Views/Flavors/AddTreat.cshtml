@@ -27,30 +27,24 @@ else
 }
 
 <p>
-  <a
-  asp-controller="Treats"
+  <a asp-controller="Treats"
   asp-action="Create"
-  class="btn btn-primary"
-  >
+  class="btn btn-primary">
     Create new Treat
   </a>
 </p>
 <p>
-  <a
-  asp-controller="Flavors"
+  <a asp-controller="Flavors"
   asp-action="Details"
   asp-route-id="@Model.FlavorId"
-  class="btn btn-primary"
-  >
+  class="btn btn-primary">
     Back to [@(Model.Name)] Details
   </a>
 </p>
 <p>
-  <a
-  asp-controller="Flavors"
+  <a asp-controller="Flavors"
   asp-action="Index"
-  class="btn btn-primary"
-  >
+  class="btn btn-primary">
     Back to Flavors
   </a>
 </p>
