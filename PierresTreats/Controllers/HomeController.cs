@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace PierresTreats.Controllers
 {
-  public class HomeControllers : Controller
+  public class HomeController : Controller
   {
     private readonly PierresTreatsContext _db;
-    public HomeControllers(PierresTreatsContext db)
+    public HomeController(PierresTreatsContext db)
     {
       _db = db;
     }
@@ -22,7 +22,7 @@ namespace PierresTreats.Controllers
       ViewBag.Treats = TreatList;
       ViewBag.Flavors = FlavorList;
       return View();
-      
+
     }
   }
 }

@@ -9,11 +9,11 @@ using PierresTreats.Models;
 
 namespace PierresTreats.Controllers
 {
-  public class FlavorsControllers : Controller
+  public class FlavorsController : Controller
   {
     private readonly PierresTreatsContext _db;
 
-    public FlavorsControllers(PierresTreatsContext db)
+    public FlavorsController(PierresTreatsContext db)
     {
       _db = db;
     }

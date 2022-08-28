@@ -14,14 +14,14 @@ using PierresTreats.Models;
 
 namespace PierresTreats.Controllers
 {
-  public class TreatsControllers : Controller
+  public class TreatsController : Controller
   {
 
     private readonly PierresTreatsContext _db;
 
     private readonly UserManager<ApplicationUser> _userManager;
 
-    public TreatsControllers(UserManager<ApplicationUser> userManager, PierresTreatsContext db)
+    public TreatsController(UserManager<ApplicationUser> userManager, PierresTreatsContext db)
 
     {
 
