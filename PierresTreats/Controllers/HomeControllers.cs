@@ -16,11 +16,13 @@ namespace PierresTreats.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
+
       List<Treat> TreatList = _db.Treats.ToList();
       List<Flavor> FlavorList = _db.Flavors.ToList();
       ViewBag.Treats = TreatList;
       ViewBag.Flavors = FlavorList;
       return View();
+      
     }
   }
 }

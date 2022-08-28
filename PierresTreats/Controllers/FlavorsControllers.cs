@@ -32,6 +32,7 @@ namespace PierresTreats.Controllers
     }
     
     [HttpPost]
+
     public ActionResult Create(Flavor flavor)
     {
       _db.Flavors.Add(flavor);
@@ -47,7 +48,10 @@ namespace PierresTreats.Controllers
         .FirstOrDefault(flavor => flavor.FlavorId == id);
       return View(thisFlavor);
     }
+
+    
     [Authorize]
+
     public ActionResult Edit(int id)
     {
 
@@ -62,7 +66,7 @@ namespace PierresTreats.Controllers
       _db.Entry(flavor).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
-      
+
     }
 
     [Authorize]
