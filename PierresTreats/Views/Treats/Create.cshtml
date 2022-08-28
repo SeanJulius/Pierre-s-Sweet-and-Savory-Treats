@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Treat
+
+
+<h4>Add a new Treat</h4>
+
+@using (Html.BeginForm())
+
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name, new { @required = true })
+
+  
+  @Html.LabelFor(model => model.Description)
+  @Html.TextBoxFor(model => model.Description, new { @required = true })
+
+  <input type="submit" value="Add new Treat" class="btn btn-default" />
+}
+<p>
+  <a href='javascript:history.go(-1)' class="btn btn-primary">Previous Page</a>
+</p>
+<p>@Html.ActionLink("Show all Treats", "Index")</p>

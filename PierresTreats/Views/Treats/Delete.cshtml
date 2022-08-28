@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Treat
+
+<h2>Please reconsider before you delete this?</h2>
+<p>
+
+  @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+  @using (Html.BeginForm())
+  {
+
+    <input class="btn btn-dark" type="submit" value="Delete" />
+
+  }
+</p>
+
+<p>
+  <a asp-controller="Treats"
+  asp-action="Details"
+  asp-route-id="@Model.TreatId"
+  class="btn btn-primary">
+    Back to [@(Model.Name)] Details
+  </a>
+</p>
+@Html.ActionLink("Back to Treats", "Index")

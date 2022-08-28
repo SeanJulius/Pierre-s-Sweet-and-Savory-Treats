@@ -30,10 +30,8 @@ else
             @Html.ActionLink(join.Treat.Name , "Details", "Treats", new { id = join.Treat.TreatId})
           </td>
           <td>
-            <form 
-              asp-action="DeleteTreat"
-              asp-controller="Flavors"
-              >
+            <form asp-action="DeleteTreat"
+              asp-controller="Flavors">
 
               <input id="joinId" name="joinId" type="hidden" value=@(join.FlavorTreatId)>
               <input type="submit" class="btn btn-dark" value="Delete"/>
