@@ -2,62 +2,62 @@
   Layout = "_Layout";
 }
 
-<h1 id='welcome'><i class="bi bi-award-fill"></i>Welcome to the Pierre's Sweet and Savory Treats Management!<i class="bi bi-award-fill"></i>
-</h1>
+  <h1 id='welcome'><i class="bi bi-award-fill"></i>Welcome to the Pierre's Sweet and Savory Treats Management!<i class="bi bi-award-fill"></i>
+  </h1>
 
-<h1>Flavors</h1>
+  <h1>Flavors</h1>
 
-@if (ViewBag.Flavors.Count == 0)
-{
-  <h3>Flavors have not been added!</h3>
-} 
+  @if (ViewBag.Flavors.Count == 0)
+  {
+    <h3>Flavors have not been added!</h3>
+  } 
 
-<ul>
-  @foreach(var flavor in ViewBag.Flavors)
+  <ul>
+    @foreach(var flavor in ViewBag.Flavors)
+    {
+      <li>
+        @Html.ActionLink($"{flavor.Name}", "Details", "Flavors", new { id = flavor.FlavorId })
+        | quantity of treats: @(flavor.JoinEntities.Count)
+      </li>
+    }
+  </ul>
+
+
+  <h1>Treats</h1>
+
+  @if (ViewBag.Treats.Count == 0)
+  {
+    <h3>Treats have not been added!</h3>
+  } 
+
+
+  <ul>
+  @foreach (var treat in ViewBag.Treats)
   {
     <li>
-      @Html.ActionLink($"{flavor.Name}", "Details", "Flavors", new { id = flavor.FlavorId })
-      | quantity of treats: @(flavor.JoinEntities.Count)
+      @Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId })
+      | quantity of flavors: @(treat.JoinEntities.Count)
     </li>
   }
-</ul>
+  </ul>
 
 
-<h1>Treats</h1>
-
-@if (ViewBag.Treats.Count == 0)
-{
-  <h3>Treats have not been added!</h3>
-} 
-
-
-<ul>
-@foreach (var treat in ViewBag.Treats)
-{
-  <li>
-    @Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId })
-    | quantity of flavors: @(treat.JoinEntities.Count)
-  </li>
-}
-</ul>
-
-
-<p>
-  <a asp-action="Index"
-    asp-controller="Flavors"
-    class="btn btn-primary"><i class="bi bi-card-list"></i> All Flavors
-  </a>
-</p> 
-<p>
-  <a asp-action="Index"
-    asp-controller="Treats"
-    class="btn btn-primary"><i class="bi bi-card-list"></i> All Treats
-  </a>
-</p> 
-<p>
-  <a asp-action="Index"
+  <p>
+    <a asp-action="Index"
+      asp-controller="Flavors"
+      class="btn btn-primary"><i class="bi bi-card-list"></i> All Flavors
+    </a>
+  </p> 
+  <p>
+    <a asp-action="Index"
+      asp-controller="Treats"
+      class="btn btn-primary"><i class="bi bi-card-list"></i> All Treats
+    </a>
+  </p> 
+  <p>
+    <a asp-action="Index"
     asp-controller="Account"
     class="btn btn-primary"><i class="bi bi-box-arrow-in-right"></i>
     Create account/Login
-  </a>
-</p> 
+    </a>
+  </p> 

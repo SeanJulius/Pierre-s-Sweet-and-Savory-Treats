@@ -1,0 +1,6 @@
+/* some fancy styling to come */
+body {
+  background-color:url('../img/Bakery.jpeg');
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
